@@ -101,7 +101,7 @@ describe('carre dun element', () => {
 
     it("verification resultat", () =>{
         cy.get(".result")
-        .contains('4');
+        .contains('3');
     })
 })
 
