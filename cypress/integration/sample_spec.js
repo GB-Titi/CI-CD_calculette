@@ -82,6 +82,29 @@ describe('Division de deux éléments', () => {
     })
 })
 
+describe('carre dun element', () => {
+    it("clic sur carre", () =>{
+        cy.visit('http://localhost:3000') 
+        cy.get('.touch[data-value="√x"]')
+        .click();
+    })
+
+    it("clic sur un élément", () => {
+        cy.get(".touch[data-value='9']")
+           .click();
+    }); 
+
+    it("clic sur = ", () =>{
+        cy.get(".touch[data-value='=']")
+        .click();
+    })
+
+    it("verification resultat", () =>{
+        cy.get(".result")
+        .contains('4');
+    })
+})
+
 // describe('Modulo dun element', () => {
 //     it("clic sur un élément", () => {
 //         cy.visit('http://localhost:3000') 
@@ -104,26 +127,3 @@ describe('Division de deux éléments', () => {
 //         .contains('1');
 //     })
 // })
-
-describe('carre dun element', () => {
-    it("clic sur carre", () =>{
-        cy.visit('http://localhost:3000') 
-        cy.get('.touch[data-value="√x"]')
-        .click();
-    })
-
-    it("clic sur un élément", () => {
-        cy.get(".touch[data-value='9']")
-           .click();
-    }); 
-
-    it("clic sur = ", () =>{
-        cy.get(".touch[data-value='=']")
-        .click();
-    })
-
-    it("verification resultat", () =>{
-        cy.get(".result")
-        .contains('3');
-    })
-})
